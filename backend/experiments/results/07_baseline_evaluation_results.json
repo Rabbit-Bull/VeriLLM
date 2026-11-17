@@ -1,0 +1,295 @@
+{
+  "model_specs": {
+    "nli_model": {
+      "name": "cross-encoder/nli-deberta-v3-xsmall",
+      "total_parameters": 70831107,
+      "weight_memory_mb": 270.2
+    },
+    "minicheck_model": {
+      "name": "lytang/MiniCheck-RoBERTa-Large",
+      "total_parameters": 355361794,
+      "weight_memory_mb": 1355.6
+    }
+  },
+  "sample_size": 60,
+  "latencies_ms": {
+    "nli_deberta_v3_xsmall": 964.21,
+    "minicheck_roberta_large": 9210.14
+  },
+  "nli_3class_metrics": {
+    "macro_f1": 35.3,
+    "classes": {
+      "SUPPORTED_PROXY": {
+        "precision": 100.0,
+        "recall": 5.0,
+        "f1": 9.52
+      },
+      "CONTRADICTED": {
+        "precision": 75.0,
+        "recall": 30.0,
+        "f1": 42.86
+      },
+      "UNSUPPORTED": {
+        "precision": 37.25,
+        "recall": 95.0,
+        "f1": 53.52
+      }
+    },
+    "confusion_matrix": [
+      [
+        1,
+        1,
+        18
+      ],
+      [
+        0,
+        6,
+        14
+      ],
+      [
+        0,
+        1,
+        19
+      ]
+    ],
+    "labels_order": [
+      "SUPPORTED_PROXY",
+      "CONTRADICTED",
+      "UNSUPPORTED"
+    ]
+  },
+  "binary_comparison": {
+    "nli_deberta": {
+      "macro_f1": 45.17,
+      "supported_f1": 9.52,
+      "hallucination_f1": 80.81,
+      "confusion_matrix": [
+        [
+          1,
+          19
+        ],
+        [
+          0,
+          40
+        ]
+      ]
+    },
+    "minicheck": {
+      "macro_f1": 72.82,
+      "supported_f1": 65.12,
+      "hallucination_f1": 80.52,
+      "confusion_matrix": [
+        [
+          14,
+          6
+        ],
+        [
+          9,
+          31
+        ]
+      ]
+    }
+  },
+  "failure_cases": [
+    {
+      "example_id": "2483_s05",
+      "task_type": "Summary",
+      "gold_label": "SUPPORTED_PROXY",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0286,
+        "contradiction": 0.0696,
+        "neutral": 0.9019
+      },
+      "minicheck_support_prob": 0.0092,
+      "sentence": "Betsy Sharkey of the Los Angeles Times enjoyed the film's action sequences, particularly the parkour-influenced stunts, but noted that they were not grounded in reality.",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": []
+    },
+    {
+      "example_id": "9452_s03",
+      "task_type": "Data2txt",
+      "gold_label": "CONTRADICTED",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0037,
+        "contradiction": 0.0262,
+        "neutral": 0.9701
+      },
+      "minicheck_support_prob": 0.1786,
+      "sentence": "They are open Monday through Sunday from 6:30 am to 8:00 pm.",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": [
+        {
+          "text": "They are open Monday through Sunday from 6:30 am to 8:00 pm",
+          "label_type": "Evident Conflict",
+          "start": 179,
+          "end": 238,
+          "overlap_ratio": 0.9833,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "913_s08",
+      "task_type": "Summary",
+      "gold_label": "SUPPORTED_PROXY",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.1878,
+        "contradiction": 0.1337,
+        "neutral": 0.6785
+      },
+      "minicheck_support_prob": 0.0314,
+      "sentence": "Gosling believes that his film should convey the paradox of Detroit, showing that dereliction is happening but it doesn't define the city. \"",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": []
+    },
+    {
+      "example_id": "5893_s09",
+      "task_type": "Data2txt",
+      "gold_label": "SUPPORTED_PROXY",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0304,
+        "contradiction": 0.2357,
+        "neutral": 0.734
+      },
+      "minicheck_support_prob": 0.9868,
+      "sentence": "They also praised the well-rounded menu, with options ranging from burgers to nachos.",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": []
+    },
+    {
+      "example_id": "12639_s14",
+      "task_type": "QA",
+      "gold_label": "UNSUPPORTED",
+      "nli_predicted": "CONTRADICTED",
+      "nli_probs": {
+        "entailment": 0.0042,
+        "contradiction": 0.9319,
+        "neutral": 0.0639
+      },
+      "minicheck_support_prob": 0.0836,
+      "sentence": "There are no income limits for contributing to a Roth IRA. (",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": [
+        {
+          "text": "8. There are no income limits for contributing to a Roth IRA.",
+          "label_type": "Evident Baseless Info",
+          "start": 1107,
+          "end": 1168,
+          "overlap_ratio": 0.9667,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "14901_s04",
+      "task_type": "QA",
+      "gold_label": "SUPPORTED_PROXY",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0685,
+        "contradiction": 0.0089,
+        "neutral": 0.9226
+      },
+      "minicheck_support_prob": 0.688,
+      "sentence": "To allow for unidirectional flow of air through the lungs, increasing the oxygen content of the air moving through the lungs and delivering it directly to the blood (passage 2).",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": []
+    },
+    {
+      "example_id": "14898_s04",
+      "task_type": "QA",
+      "gold_label": "SUPPORTED_PROXY",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.1993,
+        "contradiction": 0.0045,
+        "neutral": 0.7962
+      },
+      "minicheck_support_prob": 0.8866,
+      "sentence": "The air sacs also extend into various parts of the bird's body such as the humerus, femur, vertebrae and skull, and are involved in moving air in and out of the respiratory system through pressure changes.",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": []
+    },
+    {
+      "example_id": "12982_s08",
+      "task_type": "QA",
+      "gold_label": "CONTRADICTED",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.4175,
+        "contradiction": 0.0316,
+        "neutral": 0.5508
+      },
+      "minicheck_support_prob": 0.9041,
+      "sentence": "After the initial cooking time, turn the fillet over and cook for an additional 3-4 minutes, or until the salmon is cooked through and the skin is crispy.",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": [
+        {
+          "text": "additional 3-4 minutes",
+          "label_type": "Evident Conflict",
+          "start": 363,
+          "end": 385,
+          "overlap_ratio": 0.1429,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "245_s02",
+      "task_type": "Summary",
+      "gold_label": "CONTRADICTED",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0063,
+        "contradiction": 0.2783,
+        "neutral": 0.7154
+      },
+      "minicheck_support_prob": 0.6878,
+      "sentence": "The victim, Ron Lane, was white and gay, and the suspect, Kenneth Morgan Stancil III, who has white supremacist gang tattoos, is also white.",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": [
+        {
+          "text": "has white supremacist gang tattoos",
+          "label_type": "Evident Conflict",
+          "start": 178,
+          "end": 212,
+          "overlap_ratio": 0.2429,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "5451_s01",
+      "task_type": "Summary",
+      "gold_label": "SUPPORTED_PROXY",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0175,
+        "contradiction": 0.1226,
+        "neutral": 0.8598
+      },
+      "minicheck_support_prob": 0.0845,
+      "sentence": "Here is a summary of the article in 92 words:\n\nMelissa Jordan, 26, disappeared after going on a date with Onnie B. Nesbitt in Milan, Tennessee in 1995.",
+      "has_implicit_true": false,
+      "has_due_to_null": false,
+      "annotations": []
+    }
+  ]
+}

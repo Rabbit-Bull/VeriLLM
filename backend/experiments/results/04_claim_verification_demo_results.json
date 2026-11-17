@@ -1,0 +1,237 @@
+{
+  "experiment": "04_claim_verification_pipeline_demo",
+  "document": "sample_apollo11_mission.pdf",
+  "models_used": {
+    "document_verifier": "lytang/MiniCheck-RoBERTa-Large (355M params)",
+    "nli_cross_encoder": "cross-encoder/nli-deberta-v3-xsmall (70.8M params)",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2 (22.7M params)"
+  },
+  "candidate_response": "The Apollo 11 mission was launched on a Saturn V rocket from Kennedy Space Center on July 16, 1969. Neil Armstrong and Buzz Aldrin landed the lunar module Eagle on July 20, 1969, and they collected 47.5 pounds of lunar rock. Michael Collins walked on the Moon with Armstrong while Buzz Aldrin flew the Command Module. The astronauts safely returned to Earth and splashed down in the Pacific Ocean on July 24, 1969. Did you know the mission was watched by over 650 million television viewers worldwide? Buzz Aldrin also planted an olive branch on Mars. In my opinion, Apollo 11 is humanity's greatest triumph.",
+  "metrics": {
+    "total_claims": 9,
+    "factual_claims": 8,
+    "non_factual_claims": 1,
+    "supported_count": 5,
+    "contradicted_count": 1,
+    "unsupported_count": 2,
+    "unverifiable_count": 0,
+    "non_factual_count": 1,
+    "has_factual_claims": true,
+    "evidence_support_rate": 62.5,
+    "confirmed_contradiction_rate": 12.5,
+    "unsupported_rate": 25.0,
+    "unverifiable_rate": 0.0,
+    "uncertainty_rate": 25.0,
+    "denominator_description": "Metrics evaluated over 8 factual claims (1 non-factual statements excluded from factuality denominator)."
+  },
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "claim_text": "The Apollo 11 mission was launched on a Saturn V rocket from Kennedy Space Center on July 16, 1969.",
+      "classification": "SUPPORTED",
+      "is_factual": true,
+      "scores": {
+        "minicheck_prediction": 1,
+        "minicheck_probability": 0.9867866039276123,
+        "nli_entailment_prob": 0.9757266640663147,
+        "nli_contradiction_prob": 0.000502029899507761,
+        "nli_neutral_prob": 0.023771360516548157,
+        "retrieval_similarity": 0.7587
+      },
+      "decision_rule": "EVIDENCE_ENTAILMENT",
+      "reasoning_trace": "Evidence in 'sample_apollo11_mission.pdf' (Page 1) entails the claim. [MiniCheck support p=0.9868, NLI entailment=0.9757, contradiction=0.0005]",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 1,
+        "chunk_id": "sample_apollo11_mission_pdf_p01_c001",
+        "similarity_score": 0.7587,
+        "text_snippet": ": Launch and Trans-Lunar Flight The Apollo 11 mission was the first spaceflight that landed humans on the Moon. The miss..."
+      }
+    },
+    {
+      "claim_id": "claim_002",
+      "claim_text": "Neil Armstrong and Buzz Aldrin landed the lunar module Eagle on July 20, 1969,.",
+      "classification": "SUPPORTED",
+      "is_factual": true,
+      "scores": {
+        "minicheck_prediction": 1,
+        "minicheck_probability": 0.5015146732330322,
+        "nli_entailment_prob": 0.8797550797462463,
+        "nli_contradiction_prob": 0.08544893562793732,
+        "nli_neutral_prob": 0.03479593247175217,
+        "retrieval_similarity": 0.7911
+      },
+      "decision_rule": "EVIDENCE_ENTAILMENT",
+      "reasoning_trace": "Evidence in 'sample_apollo11_mission.pdf' (Page 2) entails the claim. [MiniCheck support p=0.5015, NLI entailment=0.8798, contradiction=0.0854]",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 2,
+        "chunk_id": "sample_apollo11_mission_pdf_p02_c001",
+        "similarity_score": 0.7911,
+        "text_snippet": ": Lunar Landing and Surface Operations On July 20, 1969, Armstrong and Aldrin entered Eagle and prepared for descent to ..."
+      }
+    },
+    {
+      "claim_id": "claim_003",
+      "claim_text": "they collected 47.5 pounds of lunar rock.",
+      "classification": "SUPPORTED",
+      "is_factual": true,
+      "scores": {
+        "minicheck_prediction": 1,
+        "minicheck_probability": 0.989648163318634,
+        "nli_entailment_prob": 0.0692075863480568,
+        "nli_contradiction_prob": 0.3565747141838074,
+        "nli_neutral_prob": 0.5742177367210388,
+        "retrieval_similarity": 0.4822
+      },
+      "decision_rule": "EVIDENCE_ENTAILMENT",
+      "reasoning_trace": "Evidence in 'sample_apollo11_mission.pdf' (Page 2) entails the claim. [MiniCheck support p=0.9896, NLI entailment=0.0692, contradiction=0.3566]",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 2,
+        "chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+        "similarity_score": 0.4822,
+        "text_snippet": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photograph..."
+      }
+    },
+    {
+      "claim_id": "claim_004",
+      "claim_text": "Michael Collins walked on the Moon with Armstrong while Buzz Aldrin flew the Command Module.",
+      "classification": "CONTRADICTED",
+      "is_factual": true,
+      "scores": {
+        "minicheck_prediction": 0,
+        "minicheck_probability": 0.032641664147377014,
+        "nli_entailment_prob": 0.00038503826363012195,
+        "nli_contradiction_prob": 0.9958292841911316,
+        "nli_neutral_prob": 0.003785740816965699,
+        "retrieval_similarity": 0.7879
+      },
+      "decision_rule": "EVIDENCE_CONTRADICTION",
+      "reasoning_trace": "Evidence in 'sample_apollo11_mission.pdf' (Page 2) directly refutes the claim. [NLI contradiction=0.9958, MiniCheck support p=0.0326, NLI neutral=0.0038]",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 2,
+        "chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+        "similarity_score": 0.7879,
+        "text_snippet": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photograph..."
+      }
+    },
+    {
+      "claim_id": "claim_005",
+      "claim_text": "The astronauts safely returned to Earth.",
+      "classification": "SUPPORTED",
+      "is_factual": true,
+      "scores": {
+        "minicheck_prediction": 1,
+        "minicheck_probability": 0.9867655038833618,
+        "nli_entailment_prob": 0.9583878517150879,
+        "nli_contradiction_prob": 0.006901501212269068,
+        "nli_neutral_prob": 0.03471062704920769,
+        "retrieval_similarity": 0.6691
+      },
+      "decision_rule": "EVIDENCE_ENTAILMENT",
+      "reasoning_trace": "Evidence in 'sample_apollo11_mission.pdf' (Page 3) entails the claim. [MiniCheck support p=0.9868, NLI entailment=0.9584, contradiction=0.0069]",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 3,
+        "chunk_id": "sample_apollo11_mission_pdf_p03_c002",
+        "similarity_score": 0.6691,
+        "text_snippet": "The astronauts began their journey back to Earth. Apollo 11 safely returned to Earth and splashed down in the Pacific Oc..."
+      }
+    },
+    {
+      "claim_id": "claim_006",
+      "claim_text": "The astronauts splashed down in the Pacific Ocean on July 24, 1969.",
+      "classification": "SUPPORTED",
+      "is_factual": true,
+      "scores": {
+        "minicheck_prediction": 1,
+        "minicheck_probability": 0.988713264465332,
+        "nli_entailment_prob": 0.9861109256744385,
+        "nli_contradiction_prob": 0.001864669262431562,
+        "nli_neutral_prob": 0.012024440802633762,
+        "retrieval_similarity": 0.6768
+      },
+      "decision_rule": "EVIDENCE_ENTAILMENT",
+      "reasoning_trace": "Evidence in 'sample_apollo11_mission.pdf' (Page 3) entails the claim. [MiniCheck support p=0.9887, NLI entailment=0.9861, contradiction=0.0019]",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 3,
+        "chunk_id": "sample_apollo11_mission_pdf_p03_c002",
+        "similarity_score": 0.6768,
+        "text_snippet": "The astronauts began their journey back to Earth. Apollo 11 safely returned to Earth and splashed down in the Pacific Oc..."
+      }
+    },
+    {
+      "claim_id": "claim_007",
+      "claim_text": "The mission was watched by over 650 million television viewers worldwide.",
+      "classification": "UNSUPPORTED",
+      "is_factual": true,
+      "scores": {
+        "minicheck_prediction": 0,
+        "minicheck_probability": 0.00581367826089263,
+        "nli_entailment_prob": 0.00020543740538414568,
+        "nli_contradiction_prob": 0.005000782664865255,
+        "nli_neutral_prob": 0.9947938323020935,
+        "retrieval_similarity": 0.3712
+      },
+      "decision_rule": "EVIDENCE_UNMENTIONED_NEUTRAL",
+      "reasoning_trace": "Retrieved passage in 'sample_apollo11_mission.pdf' (Page 2) discusses related context but does not contain factual assertions confirming or refuting the claim. [NLI neutral=0.9948, MiniCheck support p=0.0058, NLI contradiction=0.0050]",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 2,
+        "chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+        "similarity_score": 0.3712,
+        "text_snippet": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photograph..."
+      }
+    },
+    {
+      "claim_id": "claim_008",
+      "claim_text": "Buzz Aldrin also planted an olive branch on Mars.",
+      "classification": "UNSUPPORTED",
+      "is_factual": true,
+      "scores": {
+        "minicheck_prediction": 0,
+        "minicheck_probability": 0.004384775646030903,
+        "nli_entailment_prob": 0.0002467550802975893,
+        "nli_contradiction_prob": 0.01527625136077404,
+        "nli_neutral_prob": 0.9844769239425659,
+        "retrieval_similarity": 0.5255
+      },
+      "decision_rule": "EVIDENCE_UNMENTIONED_NEUTRAL",
+      "reasoning_trace": "Retrieved passage in 'sample_apollo11_mission.pdf' (Page 2) discusses related context but does not contain factual assertions confirming or refuting the claim. [NLI neutral=0.9845, MiniCheck support p=0.0044, NLI contradiction=0.0153]",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 2,
+        "chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+        "similarity_score": 0.5255,
+        "text_snippet": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photograph..."
+      }
+    },
+    {
+      "claim_id": "claim_009",
+      "claim_text": "In my opinion, Apollo 11 is humanity's greatest triumph.",
+      "classification": "NON_FACTUAL",
+      "is_factual": false,
+      "scores": {
+        "minicheck_prediction": null,
+        "minicheck_probability": null,
+        "nli_entailment_prob": null,
+        "nli_contradiction_prob": null,
+        "nli_neutral_prob": null,
+        "retrieval_similarity": 0.454
+      },
+      "decision_rule": "NON_FACTUAL_ASSERTION",
+      "reasoning_trace": "Statement is subjective, opinion-based, or conversational meta-text and does not assert an empirical factual proposition.",
+      "primary_evidence": {
+        "document_name": "sample_apollo11_mission.pdf",
+        "page_number": 1,
+        "chunk_id": "sample_apollo11_mission_pdf_p01_c001",
+        "similarity_score": 0.454,
+        "text_snippet": ": Launch and Trans-Lunar Flight The Apollo 11 mission was the first spaceflight that landed humans on the Moon. The miss..."
+      }
+    }
+  ],
+  "execution_duration_seconds": 10.277
+}

@@ -1,0 +1,471 @@
+[
+  {
+    "title": "Example 1: Master Prompt Benchmark (Eiffel Tower)",
+    "raw_text": "The Eiffel Tower is in Paris. It was completed in 1889. It is 500 metres tall.",
+    "total_sentences": 3,
+    "factual_count": 3,
+    "non_factual_count": 0,
+    "claims": [
+      {
+        "claim_id": "claim_001",
+        "text": "The Eiffel Tower is in Paris.",
+        "source_sentence": "The Eiffel Tower is in Paris.",
+        "start_char": 0,
+        "end_char": 29,
+        "claim_start_char": 0,
+        "claim_end_char": 29,
+        "offset_type": "EXACT",
+        "is_factual": true,
+        "claim_type": "FACTUAL_PROPOSITION",
+        "has_negation": false,
+        "has_numbers": false,
+        "named_entities": [
+          {
+            "text": "The Eiffel Tower",
+            "label": "LOC"
+          },
+          {
+            "text": "Paris",
+            "label": "GPE"
+          }
+        ],
+        "metadata": {
+          "has_negation": false,
+          "has_numbers": false,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "SIMPLE"
+        }
+      },
+      {
+        "claim_id": "claim_002",
+        "text": "The Eiffel Tower was completed in 1889.",
+        "source_sentence": "It was completed in 1889.",
+        "start_char": 30,
+        "end_char": 55,
+        "claim_start_char": 30,
+        "claim_end_char": 55,
+        "offset_type": "PRONOUN_RESOLVED",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "The Eiffel Tower",
+            "label": "LOC"
+          },
+          {
+            "text": "1889",
+            "label": "DATE"
+          }
+        ],
+        "metadata": {
+          "resolved_pronoun": "It",
+          "resolved_from_subject": "The Eiffel Tower",
+          "original_sentence": "It was completed in 1889.",
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "SIMPLE"
+        }
+      },
+      {
+        "claim_id": "claim_003",
+        "text": "The Eiffel Tower is 500 metres tall.",
+        "source_sentence": "It is 500 metres tall.",
+        "start_char": 56,
+        "end_char": 78,
+        "claim_start_char": 56,
+        "claim_end_char": 78,
+        "offset_type": "PRONOUN_RESOLVED",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "The Eiffel Tower",
+            "label": "LOC"
+          },
+          {
+            "text": "500 metres",
+            "label": "QUANTITY"
+          }
+        ],
+        "metadata": {
+          "resolved_pronoun": "It",
+          "resolved_from_subject": "The Eiffel Tower",
+          "original_sentence": "It is 500 metres tall.",
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "SIMPLE"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Example 2: Compound Predicates & Conjunctions (Marie Curie)",
+    "raw_text": "Marie Curie was born in Poland in 1867 and was the first woman to win a Nobel Prize.",
+    "total_sentences": 1,
+    "factual_count": 2,
+    "non_factual_count": 0,
+    "claims": [
+      {
+        "claim_id": "claim_001",
+        "text": "Marie Curie was born in Poland in 1867.",
+        "source_sentence": "Marie Curie was born in Poland in 1867 and was the first woman to win a Nobel Prize.",
+        "start_char": 0,
+        "end_char": 84,
+        "claim_start_char": 0,
+        "claim_end_char": 38,
+        "offset_type": "EXACT",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "Marie Curie",
+            "label": "PERSON"
+          },
+          {
+            "text": "Poland",
+            "label": "GPE"
+          },
+          {
+            "text": "1867",
+            "label": "DATE"
+          }
+        ],
+        "metadata": {
+          "carried_subject": "Marie Curie",
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "COMPOUND_PREDICATE_1"
+        }
+      },
+      {
+        "claim_id": "claim_002",
+        "text": "Marie Curie was the first woman to win a Nobel Prize.",
+        "source_sentence": "Marie Curie was born in Poland in 1867 and was the first woman to win a Nobel Prize.",
+        "start_char": 0,
+        "end_char": 84,
+        "claim_start_char": 43,
+        "claim_end_char": 84,
+        "offset_type": "CLAUSE_SPAN",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "Marie Curie",
+            "label": "PERSON"
+          },
+          {
+            "text": "first",
+            "label": "ORDINAL"
+          },
+          {
+            "text": "a Nobel Prize",
+            "label": "WORK_OF_ART"
+          }
+        ],
+        "metadata": {
+          "carried_subject": "Marie Curie",
+          "original_clause_span": [
+            43,
+            84
+          ],
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "COMPOUND_PREDICATE_2"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Example 3: Structured Markdown List with Numbers & Dates",
+    "raw_text": "Here are key facts about Apollo 11:\n1. Apollo 11 landed on the Moon on July 20, 1969.\n2. Neil Armstrong and Buzz Aldrin collected 47.5 pounds of lunar rock.\n3. Michael Collins did not walk on the Moon.",
+    "total_sentences": 4,
+    "factual_count": 4,
+    "non_factual_count": 0,
+    "claims": [
+      {
+        "claim_id": "claim_001",
+        "text": "Here are key facts about Apollo 11:",
+        "source_sentence": "Here are key facts about Apollo 11:",
+        "start_char": 0,
+        "end_char": 35,
+        "claim_start_char": 0,
+        "claim_end_char": 35,
+        "offset_type": "EXACT",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "Apollo",
+            "label": "ORG"
+          }
+        ],
+        "metadata": {
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "SIMPLE"
+        }
+      },
+      {
+        "claim_id": "claim_002",
+        "text": "Apollo 11 landed on the Moon on July 20, 1969.",
+        "source_sentence": "Apollo 11 landed on the Moon on July 20, 1969.",
+        "start_char": 39,
+        "end_char": 85,
+        "claim_start_char": 39,
+        "claim_end_char": 85,
+        "offset_type": "EXACT",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "Apollo",
+            "label": "ORG"
+          },
+          {
+            "text": "11",
+            "label": "CARDINAL"
+          },
+          {
+            "text": "Moon",
+            "label": "PERSON"
+          },
+          {
+            "text": "July 20, 1969",
+            "label": "DATE"
+          }
+        ],
+        "metadata": {
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "SIMPLE"
+        }
+      },
+      {
+        "claim_id": "claim_003",
+        "text": "Neil Armstrong and Buzz Aldrin collected 47.5 pounds of lunar rock.",
+        "source_sentence": "Neil Armstrong and Buzz Aldrin collected 47.5 pounds of lunar rock.",
+        "start_char": 89,
+        "end_char": 156,
+        "claim_start_char": 89,
+        "claim_end_char": 156,
+        "offset_type": "EXACT",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "Neil Armstrong",
+            "label": "PERSON"
+          },
+          {
+            "text": "Buzz Aldrin",
+            "label": "PERSON"
+          },
+          {
+            "text": "47.5 pounds",
+            "label": "QUANTITY"
+          },
+          {
+            "text": "lunar rock",
+            "label": "GPE"
+          }
+        ],
+        "metadata": {
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "SIMPLE"
+        }
+      },
+      {
+        "claim_id": "claim_004",
+        "text": "Michael Collins did not walk on the Moon.",
+        "source_sentence": "Michael Collins did not walk on the Moon.",
+        "start_char": 160,
+        "end_char": 201,
+        "claim_start_char": 160,
+        "claim_end_char": 201,
+        "offset_type": "EXACT",
+        "is_factual": true,
+        "claim_type": "FACTUAL_PROPOSITION",
+        "has_negation": true,
+        "has_numbers": false,
+        "named_entities": [
+          {
+            "text": "Michael Collins",
+            "label": "PERSON"
+          },
+          {
+            "text": "Moon",
+            "label": "PERSON"
+          }
+        ],
+        "metadata": {
+          "has_negation": true,
+          "has_numbers": false,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "SIMPLE"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Example 4: Conversational Framing, Opinions, and Inquiries",
+    "raw_text": "Hello! In my opinion, Paris is the most beautiful city in Europe. The Louvre Museum was established in 1793. Did you know it houses over 380,000 objects? Hope this helps!",
+    "total_sentences": 5,
+    "factual_count": 2,
+    "non_factual_count": 3,
+    "claims": [
+      {
+        "claim_id": "claim_001",
+        "text": "Hello!",
+        "source_sentence": "Hello!",
+        "start_char": 0,
+        "end_char": 6,
+        "claim_start_char": 0,
+        "claim_end_char": 6,
+        "offset_type": "EXACT",
+        "is_factual": false,
+        "claim_type": "CONVERSATIONAL",
+        "has_negation": false,
+        "has_numbers": false,
+        "named_entities": [],
+        "metadata": {
+          "has_negation": false,
+          "has_numbers": false,
+          "filter_reason": "Conversational framing / AI meta-text",
+          "clause_type": "SIMPLE"
+        }
+      },
+      {
+        "claim_id": "claim_002",
+        "text": "In my opinion, Paris is the most beautiful city in Europe.",
+        "source_sentence": "In my opinion, Paris is the most beautiful city in Europe.",
+        "start_char": 7,
+        "end_char": 65,
+        "claim_start_char": 7,
+        "claim_end_char": 65,
+        "offset_type": "EXACT",
+        "is_factual": false,
+        "claim_type": "SUBJECTIVE_OPINION",
+        "has_negation": false,
+        "has_numbers": false,
+        "named_entities": [
+          {
+            "text": "Paris",
+            "label": "GPE"
+          },
+          {
+            "text": "Europe",
+            "label": "LOC"
+          }
+        ],
+        "metadata": {
+          "has_negation": false,
+          "has_numbers": false,
+          "filter_reason": "Subjective opinion or hedging language",
+          "clause_type": "SIMPLE"
+        }
+      },
+      {
+        "claim_id": "claim_003",
+        "text": "The Louvre Museum was established in 1793.",
+        "source_sentence": "The Louvre Museum was established in 1793.",
+        "start_char": 66,
+        "end_char": 108,
+        "claim_start_char": 66,
+        "claim_end_char": 108,
+        "offset_type": "EXACT",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "The Louvre Museum",
+            "label": "ORG"
+          },
+          {
+            "text": "1793",
+            "label": "DATE"
+          }
+        ],
+        "metadata": {
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "SIMPLE"
+        }
+      },
+      {
+        "claim_id": "claim_004",
+        "text": "It houses over 380,000 objects.",
+        "source_sentence": "Did you know it houses over 380,000 objects?",
+        "start_char": 109,
+        "end_char": 153,
+        "claim_start_char": 122,
+        "claim_end_char": 152,
+        "offset_type": "EMBEDDED_CLAUSE",
+        "is_factual": true,
+        "claim_type": "NUMERICAL_ASSERTION",
+        "has_negation": false,
+        "has_numbers": true,
+        "named_entities": [
+          {
+            "text": "over 380,000",
+            "label": "CARDINAL"
+          }
+        ],
+        "metadata": {
+          "rhetorical_question": "Did you know it houses over 380,000 objects?",
+          "embedded_clause_slice": "it houses over 380,000 objects",
+          "extracted_from_rhetorical_question": true,
+          "has_negation": false,
+          "has_numbers": true,
+          "filter_reason": "Empirical proposition",
+          "clause_type": "EMBEDDED_FACTUAL_QUESTION"
+        }
+      },
+      {
+        "claim_id": "claim_005",
+        "text": "Hope this helps!",
+        "source_sentence": "Hope this helps!",
+        "start_char": 154,
+        "end_char": 170,
+        "claim_start_char": 154,
+        "claim_end_char": 170,
+        "offset_type": "EXACT",
+        "is_factual": false,
+        "claim_type": "CONVERSATIONAL",
+        "has_negation": false,
+        "has_numbers": false,
+        "named_entities": [],
+        "metadata": {
+          "has_negation": false,
+          "has_numbers": false,
+          "filter_reason": "Conversational framing / AI meta-text",
+          "clause_type": "SIMPLE"
+        }
+      }
+    ]
+  }
+]

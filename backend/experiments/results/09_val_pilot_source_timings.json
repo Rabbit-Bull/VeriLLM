@@ -1,0 +1,212 @@
+{
+  "13557": {
+    "task_type": "Summary",
+    "num_sentences": 25,
+    "direct_seconds": 226.27,
+    "retrieval_seconds": 133.65,
+    "total_seconds": 359.93
+  },
+  "13542": {
+    "task_type": "Summary",
+    "num_sentences": 30,
+    "direct_seconds": 335.831,
+    "retrieval_seconds": 123.664,
+    "total_seconds": 459.496
+  },
+  "12092": {
+    "task_type": "Summary",
+    "num_sentences": 34,
+    "direct_seconds": 432.886,
+    "retrieval_seconds": 164.539,
+    "total_seconds": 597.426
+  },
+  "12019": {
+    "task_type": "Summary",
+    "num_sentences": 47,
+    "direct_seconds": 1399.258,
+    "retrieval_seconds": 282.434,
+    "total_seconds": 1681.692
+  },
+  "11783": {
+    "task_type": "Summary",
+    "num_sentences": 32,
+    "direct_seconds": 471.683,
+    "retrieval_seconds": 135.369,
+    "total_seconds": 607.052
+  },
+  "12432": {
+    "task_type": "QA",
+    "num_sentences": 47,
+    "direct_seconds": 466.008,
+    "retrieval_seconds": 149.419,
+    "total_seconds": 615.426
+  },
+  "12411": {
+    "task_type": "QA",
+    "num_sentences": 60,
+    "direct_seconds": 217.645,
+    "retrieval_seconds": 194.096,
+    "total_seconds": 411.741
+  },
+  "14299": {
+    "task_type": "QA",
+    "num_sentences": 32,
+    "direct_seconds": 188.368,
+    "retrieval_seconds": 132.527,
+    "total_seconds": 320.895
+  },
+  "14317": {
+    "task_type": "QA",
+    "num_sentences": 30,
+    "direct_seconds": 91.714,
+    "retrieval_seconds": 92.94,
+    "total_seconds": 184.654
+  },
+  "12263": {
+    "task_type": "QA",
+    "num_sentences": 20,
+    "direct_seconds": 60.015,
+    "retrieval_seconds": 51.338,
+    "total_seconds": 111.353
+  },
+  "14666": {
+    "task_type": "Data2txt",
+    "num_sentences": 63,
+    "direct_seconds": 639.301,
+    "retrieval_seconds": 220.037,
+    "total_seconds": 859.338
+  },
+  "14518": {
+    "task_type": "Data2txt",
+    "num_sentences": 44,
+    "direct_seconds": 494.785,
+    "retrieval_seconds": 171.696,
+    "total_seconds": 666.481
+  },
+  "14145": {
+    "task_type": "Data2txt",
+    "num_sentences": 61,
+    "direct_seconds": 654.599,
+    "retrieval_seconds": 318.353,
+    "total_seconds": 972.951
+  },
+  "13999": {
+    "task_type": "Data2txt",
+    "num_sentences": 59,
+    "direct_seconds": 988.006,
+    "retrieval_seconds": 238.617,
+    "total_seconds": 1226.623
+  },
+  "15055": {
+    "task_type": "Data2txt",
+    "num_sentences": 52,
+    "direct_seconds": 833.888,
+    "retrieval_seconds": 422.65,
+    "total_seconds": 1256.538
+  },
+  "11943": {
+    "task_type": "Summary",
+    "num_sentences": 36,
+    "direct_seconds": 444.527,
+    "retrieval_seconds": 98.678,
+    "total_seconds": 543.205
+  },
+  "11837": {
+    "task_type": "Summary",
+    "num_sentences": 41,
+    "direct_seconds": 934.812,
+    "retrieval_seconds": 143.285,
+    "total_seconds": 1078.097
+  },
+  "11982": {
+    "task_type": "Summary",
+    "num_sentences": 29,
+    "direct_seconds": 258.402,
+    "retrieval_seconds": 81.834,
+    "total_seconds": 340.236
+  },
+  "11926": {
+    "task_type": "Summary",
+    "num_sentences": 44,
+    "direct_seconds": 367.38,
+    "retrieval_seconds": 131.089,
+    "total_seconds": 498.47
+  },
+  "13532": {
+    "task_type": "Summary",
+    "num_sentences": 26,
+    "direct_seconds": 216.191,
+    "retrieval_seconds": 81.497,
+    "total_seconds": 297.688
+  },
+  "15344": {
+    "task_type": "QA",
+    "num_sentences": 50,
+    "direct_seconds": 556.172,
+    "retrieval_seconds": 267.947,
+    "total_seconds": 824.12
+  },
+  "14403": {
+    "task_type": "QA",
+    "num_sentences": 42,
+    "direct_seconds": 606.352,
+    "retrieval_seconds": 233.528,
+    "total_seconds": 839.88
+  },
+  "12169": {
+    "task_type": "QA",
+    "num_sentences": 21,
+    "direct_seconds": 84.205,
+    "retrieval_seconds": 80.076,
+    "total_seconds": 164.28
+  },
+  "12357": {
+    "task_type": "QA",
+    "num_sentences": 29,
+    "direct_seconds": 220.36,
+    "retrieval_seconds": 153.34,
+    "total_seconds": 373.7
+  },
+  "15190": {
+    "task_type": "QA",
+    "num_sentences": 47,
+    "direct_seconds": 218.645,
+    "retrieval_seconds": 180.489,
+    "total_seconds": 399.134
+  },
+  "14667": {
+    "task_type": "Data2txt",
+    "num_sentences": 54,
+    "direct_seconds": 1023.776,
+    "retrieval_seconds": 269.305,
+    "total_seconds": 1293.081
+  },
+  "15038": {
+    "task_type": "Data2txt",
+    "num_sentences": 46,
+    "direct_seconds": 475.761,
+    "retrieval_seconds": 238.913,
+    "total_seconds": 714.674
+  },
+  "14283": {
+    "task_type": "Data2txt",
+    "num_sentences": 66,
+    "direct_seconds": 967.553,
+    "retrieval_seconds": 369.424,
+    "total_seconds": 1336.976
+  },
+  "13700": {
+    "task_type": "Data2txt",
+    "num_sentences": 43,
+    "direct_seconds": 547.361,
+    "retrieval_seconds": 179.448,
+    "total_seconds": 726.81
+  },
+  "14506": {
+    "task_type": "Data2txt",
+    "num_sentences": 49,
+    "direct_seconds": 505.871,
+    "retrieval_seconds": 156.707,
+    "total_seconds": 662.577
+  }
+}

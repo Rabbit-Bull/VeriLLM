@@ -1,0 +1,50 @@
+{
+  "experiment_name": "Phase 2: MiniCheck Baseline Verification",
+  "timestamp": "2026-11-08T18:05:28",
+  "model_name": "roberta-large",
+  "runtime_device": "CPU",
+  "load_time_seconds": 4.76,
+  "reference_document": "Apollo 11 was the American spaceflight that first landed humans on the Moon. Commander Neil Armstrong and Lunar Module Pilot Buzz Aldrin landed the Apollo Lunar Module Eagle on July 20, 1969, at 20:17 UTC. Neil Armstrong became the first person to step onto the lunar surface six hours and 39 minutes later, on July 21 at 02:56 UTC. Aldrin joined him 19 minutes later. They spent about two and a quarter hours together outside the spacecraft, and collected 47.5 pounds (21.5 kg) of lunar material to bring back to Earth. Command Module Pilot Michael Collins flew the Command Module Columbia alone in lunar orbit while they were on the surface.",
+  "test_results": [
+    {
+      "test_id": "claim_01_supported",
+      "category": "SUPPORTED",
+      "claim": "Neil Armstrong was the first person to step onto the lunar surface on July 21, 1969.",
+      "expected_label": 1,
+      "predicted_label": 1,
+      "support_probability": 0.9891,
+      "latency_seconds": 1.53,
+      "matches_expected": true,
+      "description": "Directly stated in the document (July 21, 02:56 UTC).",
+      "used_chunk": "Apollo 11 was the American spaceflight that first landed humans on the Moon. Commander Neil Armstrong and Lunar Module Pilot Buzz Aldrin landed the Apollo Lunar Module Eagle on July 20, 1969, at 20:17 UTC. Neil Armstrong became the first person to step onto the lunar surface six hours and 39 minutes later, on July 21 at 02:56 UTC. Aldrin joined him 19 minutes later. They spent about two and a quarter hours together outside the spacecraft, and collected 47.5 pounds (21.5 kg) of lunar material to bring back to Earth. Command Module Pilot Michael Collins flew the Command Module Columbia alone in lunar orbit while they were on the surface."
+    },
+    {
+      "test_id": "claim_02_contradicted",
+      "category": "CONTRADICTED",
+      "claim": "Buzz Aldrin flew the Command Module Columbia alone in lunar orbit.",
+      "expected_label": 0,
+      "predicted_label": 0,
+      "support_probability": 0.0392,
+      "latency_seconds": 1.29,
+      "matches_expected": true,
+      "description": "Contradicts document: Michael Collins flew Columbia alone, while Aldrin was on the surface.",
+      "used_chunk": "Apollo 11 was the American spaceflight that first landed humans on the Moon. Commander Neil Armstrong and Lunar Module Pilot Buzz Aldrin landed the Apollo Lunar Module Eagle on July 20, 1969, at 20:17 UTC. Neil Armstrong became the first person to step onto the lunar surface six hours and 39 minutes later, on July 21 at 02:56 UTC. Aldrin joined him 19 minutes later. They spent about two and a quarter hours together outside the spacecraft, and collected 47.5 pounds (21.5 kg) of lunar material to bring back to Earth. Command Module Pilot Michael Collins flew the Command Module Columbia alone in lunar orbit while they were on the surface."
+    },
+    {
+      "test_id": "claim_03_unmentioned",
+      "category": "UNMENTIONED",
+      "claim": "The Apollo 11 astronauts ate bacon and freeze-dried peaches for breakfast on their return flight.",
+      "expected_label": 0,
+      "predicted_label": 0,
+      "support_probability": 0.0037,
+      "latency_seconds": 1.494,
+      "matches_expected": true,
+      "description": "Not mentioned anywhere in the reference document (outside knowledge / ungrounded).",
+      "used_chunk": "Apollo 11 was the American spaceflight that first landed humans on the Moon. Commander Neil Armstrong and Lunar Module Pilot Buzz Aldrin landed the Apollo Lunar Module Eagle on July 20, 1969, at 20:17 UTC. Neil Armstrong became the first person to step onto the lunar surface six hours and 39 minutes later, on July 21 at 02:56 UTC. Aldrin joined him 19 minutes later. They spent about two and a quarter hours together outside the spacecraft, and collected 47.5 pounds (21.5 kg) of lunar material to bring back to Earth. Command Module Pilot Michael Collins flew the Command Module Columbia alone in lunar orbit while they were on the surface."
+    }
+  ],
+  "scientific_observations": {
+    "binary_limitation": "MiniCheck produces binary output (1=supported, 0=unsupported). Consequently, both contradicted claims and unmentioned claims receive label 0. This motivates VeriLLM's Phase 5 and Phase 7 4-way classification contribution.",
+    "document_grounding": "MiniCheck evaluates document faithfulness rather than universal real-world truth. A statement true in reality but absent from the document is classified as unsupported."
+  }
+}

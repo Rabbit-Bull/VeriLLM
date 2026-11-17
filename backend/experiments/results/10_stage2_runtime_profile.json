@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "2026-11-13T02:54:14.326236+00:00",
+  "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "total_elapsed_seconds": 25785.03,
+  "inference_elapsed_seconds": 25763.83,
+  "evaluation_elapsed_seconds": 19.54,
+  "peak_memory_mb": 3506.48,
+  "peak_memory_metric": "peak_working_set_mb",
+  "current_rss_mb": 1675.73,
+  "peak_rss_mb": 3506.48,
+  "cached_records_count": 1238,
+  "missing_records_inferred": 1238,
+  "per_sentence_avg_inference_ms": 20810.85
+}

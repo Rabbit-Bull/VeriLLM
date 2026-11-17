@@ -1,0 +1,21 @@
+{
+  "benchmark_sample_sentences": 16,
+  "benchmark_sample_sources": 3,
+  "cold_load_seconds": {
+    "claim_verifier_minicheck_plus_nli": 3.716,
+    "custom_deberta": 4.871,
+    "passage_retriever": 0.978,
+    "total_model_init": 9.566
+  },
+  "per_sentence_ms": {
+    "minicheck": 7016.41,
+    "nli_xsmall": 1007.64,
+    "custom_deberta": 1008.74,
+    "chunk_and_retrieve": 66.97,
+    "dual_regime_combined_estimate": 18132.56
+  },
+  "projected_runtime_minutes": {
+    "pilot_current_target": 192.21,
+    "expanded_30_sources_est": 384.41
+  }
+}

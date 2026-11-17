@@ -1,0 +1,101 @@
+{
+  "SUPPORTED_PROXY": {
+    "example_id": "30_s01",
+    "source_id": "15597",
+    "task_type": "Summary",
+    "model_name": "gpt-4-0613",
+    "primary_label": "SUPPORTED_PROXY",
+    "sentence_text": "Police in Malegaon, India, have asked residents to photograph their cattle and provide their unique features, such as age and length of tail, to enforce a recent state-wide ban on the sale and consumption of beef.",
+    "context_snippet": "Document Context:\nPolice in the Indian city of Malegaon, in the western state of Maharashtra, are requiring identity cards for an unusual group of residents: Cattle. Following a recent state-wide ban on the sale and consumption of beef, authorities in the city have asked residents to take a 'mugshot...",
+    "overlapping_spans_count": 0,
+    "overlapping_spans": [],
+    "has_conflict": false,
+    "has_baseless": false,
+    "has_implicit_true": false,
+    "has_due_to_null": false
+  },
+  "UNSUPPORTED": {
+    "example_id": "33_s05",
+    "source_id": "15597",
+    "task_type": "Summary",
+    "model_name": "llama-2-7b-chat",
+    "primary_label": "UNSUPPORTED",
+    "sentence_text": "The move has sparked controversy, with some calling it an invasion of privacy and others arguing that it is necessary to protect cows, which are considered holy in the majority Hindu population.",
+    "context_snippet": "Document Context:\nPolice in the Indian city of Malegaon, in the western state of Maharashtra, are requiring identity cards for an unusual group of residents: Cattle. Following a recent state-wide ban on the sale and consumption of beef, authorities in the city have asked residents to take a 'mugshot...",
+    "overlapping_spans_count": 1,
+    "overlapping_spans": [
+      {
+        "text": "The move has sparked controversy, with some calling it an invasion of privacy and others arguing that it is necessary to protect cows,",
+        "label_type": "Evident Baseless Info",
+        "start": 471,
+        "end": 605,
+        "overlap_ratio": 0.6907,
+        "implicit_true": false,
+        "due_to_null": false
+      }
+    ],
+    "has_conflict": false,
+    "has_baseless": false,
+    "has_implicit_true": false,
+    "has_due_to_null": false
+  },
+  "CONTRADICTED": {
+    "example_id": "51_s01",
+    "source_id": "15600",
+    "task_type": "Summary",
+    "model_name": "llama-2-7b-chat",
+    "primary_label": "CONTRADICTED",
+    "sentence_text": "On November 1, 2020, Hong Kong police responded to a call at an upscale apartment in Wan Chai, where they discovered the bodies of two women, aged 29 and 25, with signs of trauma.",
+    "context_snippet": "Document Context:\nWhen Hong Kong police answered a call in the early hours of a Saturday morning last November, they encountered a grisly scene and an alleged crime that shocked the city. One woman was lying on the floor with cuts to her neck and buttocks. Another was stuffed inside a suitcase on th...",
+    "overlapping_spans_count": 1,
+    "overlapping_spans": [
+      {
+        "text": "On November 1, 2020,",
+        "label_type": "Evident Conflict",
+        "start": 0,
+        "end": 20,
+        "overlap_ratio": 0.1117,
+        "implicit_true": false,
+        "due_to_null": false
+      }
+    ],
+    "has_conflict": false,
+    "has_baseless": false,
+    "has_implicit_true": false,
+    "has_due_to_null": false
+  },
+  "MIXED_HALLUCINATION": {
+    "example_id": "1953_s02",
+    "source_id": "11789",
+    "task_type": "Summary",
+    "model_name": "llama-2-7b-chat",
+    "primary_label": "MIXED_HALLUCINATION",
+    "sentence_text": "Former Congressman Jim Traficant Jr. shares his experience of returning to public service in 2011 after a 19-year gap, driven by a desire to help the state recover from its downfall.",
+    "context_snippet": "Document Context:\nIs America a nation divided?  And has Ohio found a better way to bridge those divisions? It's hard not to be concerned with these questions given the constant drumbeat of news about the issues that tear us apart as a nation: immigration, community and police relations, poverty, edu...",
+    "overlapping_spans_count": 2,
+    "overlapping_spans": [
+      {
+        "text": "Former Congressman Jim Traficant Jr.",
+        "label_type": "Evident Baseless Info",
+        "start": 159,
+        "end": 195,
+        "overlap_ratio": 0.1978,
+        "implicit_true": false,
+        "due_to_null": false
+      },
+      {
+        "text": "after a 19-year gap",
+        "label_type": "Evident Conflict",
+        "start": 257,
+        "end": 276,
+        "overlap_ratio": 0.1044,
+        "implicit_true": false,
+        "due_to_null": false
+      }
+    ],
+    "has_conflict": false,
+    "has_baseless": false,
+    "has_implicit_true": false,
+    "has_due_to_null": false
+  }
+}

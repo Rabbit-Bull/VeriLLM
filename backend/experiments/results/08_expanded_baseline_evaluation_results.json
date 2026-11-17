@@ -1,0 +1,295 @@
+{
+  "sample_size": 300,
+  "sample_per_class": 100,
+  "latency_ms": 917.75,
+  "total_time_seconds": 275.32,
+  "metrics_3class": {
+    "macro_f1": 34.8,
+    "weighted_f1": 34.8,
+    "classes": {
+      "SUPPORTED_PROXY": {
+        "precision": 58.33,
+        "recall": 7.0,
+        "f1": 12.5,
+        "support": 100
+      },
+      "CONTRADICTED": {
+        "precision": 64.44,
+        "recall": 29.0,
+        "f1": 40.0,
+        "support": 100
+      },
+      "UNSUPPORTED": {
+        "precision": 36.63,
+        "recall": 89.0,
+        "f1": 51.9,
+        "support": 100
+      }
+    },
+    "confusion_matrix": [
+      [
+        7,
+        8,
+        85
+      ],
+      [
+        2,
+        29,
+        69
+      ],
+      [
+        3,
+        8,
+        89
+      ]
+    ]
+  },
+  "metrics_binary": {
+    "macro_f1": 46.21,
+    "weighted_f1": 57.45,
+    "supported_f1": 12.5,
+    "hallucination_f1": 79.92,
+    "confusion_matrix": [
+      [
+        7,
+        93
+      ],
+      [
+        5,
+        195
+      ]
+    ]
+  },
+  "preliminary_60_comparison": {
+    "preliminary_macro_f1": 35.3,
+    "preliminary_cm": [
+      [
+        1,
+        1,
+        18
+      ],
+      [
+        0,
+        6,
+        14
+      ],
+      [
+        0,
+        1,
+        19
+      ]
+    ]
+  },
+  "failure_cases": [
+    {
+      "example_id": "2762_s02",
+      "task_type": "Summary",
+      "gold_label": "SUPPORTED_PROXY",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0032,
+        "contradiction": 0.1196,
+        "neutral": 0.8772
+      },
+      "sentence": "The court also sentenced 36 other defendants to life imprisonment on charges of plotting terrorist attacks against state facilities.",
+      "annotations": []
+    },
+    {
+      "example_id": "15187_s02",
+      "task_type": "QA",
+      "gold_label": "CONTRADICTED",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0078,
+        "contradiction": 0.2173,
+        "neutral": 0.775
+      },
+      "sentence": "However, there is no specific information provided about the cost of ceiling tiles.",
+      "annotations": [
+        {
+          "text": "However, there is no specific information provided about the cost of ceiling tiles.",
+          "label_type": "Evident Conflict",
+          "start": 136,
+          "end": 219,
+          "overlap_ratio": 1.0,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "6580_s02",
+      "task_type": "Data2txt",
+      "gold_label": "UNSUPPORTED",
+      "nli_predicted": "SUPPORTED_PROXY",
+      "nli_probs": {
+        "entailment": 0.8182,
+        "contradiction": 0.0177,
+        "neutral": 0.1641
+      },
+      "sentence": "Here's an objective overview of The Harbor Restaurant based on the provided structured data:\n\nThe Harbor Restaurant is a seafood restaurant located in Santa Barbara, CA, with a rating of 3.5 stars out of 5 based on 3 reviews.",
+      "annotations": [
+        {
+          "text": "based on 3 reviews",
+          "label_type": "Subtle Baseless Info",
+          "start": 212,
+          "end": 230,
+          "overlap_ratio": 0.08,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "6266_s07",
+      "task_type": "Data2txt",
+      "gold_label": "SUPPORTED_PROXY",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0094,
+        "contradiction": 0.0096,
+        "neutral": 0.981
+      },
+      "sentence": "They particularly enjoyed the everything donut and highly recommended the business.",
+      "annotations": []
+    },
+    {
+      "example_id": "8271_s03",
+      "task_type": "Data2txt",
+      "gold_label": "CONTRADICTED",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0115,
+        "contradiction": 0.0102,
+        "neutral": 0.9783
+      },
+      "sentence": "Customers can enjoy their meals on the outdoor patio or take them to go, as the business provides free parking and a validated lot.",
+      "annotations": [
+        {
+          "text": "validated lot.",
+          "label_type": "Evident Conflict",
+          "start": 379,
+          "end": 393,
+          "overlap_ratio": 0.1069,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "7947_s02",
+      "task_type": "Data2txt",
+      "gold_label": "CONTRADICTED",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0124,
+        "contradiction": 0.0421,
+        "neutral": 0.9455
+      },
+      "sentence": "With a rating of 4.0 stars, the business offers a cozy and intimate atmosphere, despite being easy to miss.",
+      "annotations": [
+        {
+          "text": "intimate atmosphere",
+          "label_type": "Evident Conflict",
+          "start": 140,
+          "end": 159,
+          "overlap_ratio": 0.1776,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "7312_s03",
+      "task_type": "Data2txt",
+      "gold_label": "CONTRADICTED",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0008,
+        "contradiction": 0.022,
+        "neutral": 0.9772
+      },
+      "sentence": "With an average rating of 4.5 stars out of 5 based on 3 reviews, the restaurant has received high praise from customers for its delicious food and friendly service.",
+      "annotations": [
+        {
+          "text": "4.5 stars",
+          "label_type": "Evident Conflict",
+          "start": 303,
+          "end": 312,
+          "overlap_ratio": 0.0549,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "6887_s04",
+      "task_type": "Data2txt",
+      "gold_label": "UNSUPPORTED",
+      "nli_predicted": "CONTRADICTED",
+      "nli_probs": {
+        "entailment": 0.0014,
+        "contradiction": 0.9391,
+        "neutral": 0.0595
+      },
+      "sentence": "The menu offers a variety of traditional Italian dishes, including pasta, pizza, and seafood options.",
+      "annotations": [
+        {
+          "text": "seafood options",
+          "label_type": "Subtle Baseless Info",
+          "start": 480,
+          "end": 495,
+          "overlap_ratio": 0.1485,
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "example_id": "6814_s07",
+      "task_type": "Data2txt",
+      "gold_label": "UNSUPPORTED",
+      "nli_predicted": "CONTRADICTED",
+      "nli_probs": {
+        "entailment": 0.0024,
+        "contradiction": 0.8075,
+        "neutral": 0.1901
+      },
+      "sentence": "There is no outdoor seating or WiFi available.",
+      "annotations": [
+        {
+          "text": "WiFi available",
+          "label_type": "Evident Baseless Info",
+          "start": 834,
+          "end": 848,
+          "overlap_ratio": 0.3043,
+          "implicit_true": false,
+          "due_to_null": true
+        }
+      ]
+    },
+    {
+      "example_id": "5711_s03",
+      "task_type": "Data2txt",
+      "gold_label": "CONTRADICTED",
+      "nli_predicted": "UNSUPPORTED",
+      "nli_probs": {
+        "entailment": 0.0013,
+        "contradiction": 0.0089,
+        "neutral": 0.9898
+      },
+      "sentence": "The atmosphere is classy and upscale, but not too formal, making it suitable for both casual and special occasions.",
+      "annotations": [
+        {
+          "text": "upscale",
+          "label_type": "Evident Conflict",
+          "start": 232,
+          "end": 239,
+          "overlap_ratio": 0.0609,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    }
+  ]
+}

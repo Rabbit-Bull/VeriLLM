@@ -1,0 +1,840 @@
+{
+  "schema_version": "phase8_step7_frozen_bundle_v1",
+  "freezing_policy": "Calibrators selected by 5-fold Val-Dev OOF NLL and refitted once on all 30 Val-Dev sources; strategy thresholds selected on Val-Dev OOF calibrated probs; zero Val-Lock peeking.",
+  "val_dev_source_ids": [
+    "11783",
+    "11837",
+    "11926",
+    "11943",
+    "11982",
+    "12019",
+    "12092",
+    "12169",
+    "12263",
+    "12357",
+    "12411",
+    "12432",
+    "13532",
+    "13542",
+    "13557",
+    "13700",
+    "13999",
+    "14145",
+    "14283",
+    "14299",
+    "14317",
+    "14403",
+    "14506",
+    "14518",
+    "14666",
+    "14667",
+    "15038",
+    "15055",
+    "15190",
+    "15344"
+  ],
+  "regimes": {
+    "direct": {
+      "val_dev_support": {
+        "fold_name": "direct_valdev_full_30_refit",
+        "total_sources": 30,
+        "n_3class_examples": 1250,
+        "counts_by_class": {
+          "CONTRADICTED": 46,
+          "SUPPORTED_PROXY": 1089,
+          "UNSUPPORTED": 115
+        },
+        "sources_by_class": {
+          "CONTRADICTED": 19,
+          "SUPPORTED_PROXY": 30,
+          "UNSUPPORTED": 26
+        }
+      },
+      "selected_c2_lambda": 0.001,
+      "val_dev_oof_c2_lambda_nll": {
+        "0.0": 0.33795,
+        "0.001": 0.337646,
+        "0.01": 0.338346,
+        "0.05": 0.345596,
+        "0.25": 0.353842,
+        "1.0": 0.356623
+      },
+      "calibrators": {
+        "C1_temp_scaling": {
+          "method": "C1_temp_scaling",
+          "temperatures": [
+            1.29473439
+          ],
+          "bias": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "l2_reg": 0.0,
+          "fit_summary": {
+            "fold_name": "direct_valdev_full_30_refit",
+            "total_sources": 30,
+            "n_3class_examples": 1250,
+            "counts_by_class": {
+              "CONTRADICTED": 46,
+              "SUPPORTED_PROXY": 1089,
+              "UNSUPPORTED": 115
+            },
+            "sources_by_class": {
+              "CONTRADICTED": 19,
+              "SUPPORTED_PROXY": 30,
+              "UNSUPPORTED": 26
+            },
+            "train_nll": 0.354327,
+            "converged": true
+          }
+        },
+        "C2_prior_bias_temp": {
+          "method": "C2_prior_bias_temp",
+          "temperatures": [
+            1.76959203
+          ],
+          "bias": [
+            -0.66788442,
+            0.71171648,
+            -0.04383205
+          ],
+          "l2_reg": 0.001,
+          "fit_summary": {
+            "fold_name": "direct_valdev_full_30_refit",
+            "total_sources": 30,
+            "n_3class_examples": 1250,
+            "counts_by_class": {
+              "CONTRADICTED": 46,
+              "SUPPORTED_PROXY": 1089,
+              "UNSUPPORTED": 115
+            },
+            "sources_by_class": {
+              "CONTRADICTED": 19,
+              "SUPPORTED_PROXY": 30,
+              "UNSUPPORTED": 26
+            },
+            "train_nll": 0.330573,
+            "converged": true
+          }
+        },
+        "Platt_minicheck": {
+          "method": "platt_logit",
+          "scale_a": 0.56190799,
+          "bias_b": 1.9968872,
+          "l2_reg": 0.0001,
+          "fit_summary": {
+            "fold_name": "direct_valdev_full_30_refit",
+            "total_sources": 30,
+            "n_3class_examples": 1250,
+            "counts_by_class": {
+              "CONTRADICTED": 46,
+              "SUPPORTED_PROXY": 1089,
+              "UNSUPPORTED": 115
+            },
+            "sources_by_class": {
+              "CONTRADICTED": 19,
+              "SUPPORTED_PROXY": 30,
+              "UNSUPPORTED": 26
+            },
+            "train_bce": 0.294709,
+            "converged": true
+          }
+        }
+      },
+      "objectives": {
+        "OBJ_CONSTRAINED": {
+          "frozen_winner_strategy": "H5_meta_calibrated_logreg",
+          "strategies": {
+            "H0_baseline": {
+              "params": {},
+              "val_dev_oof_utility": null
+            },
+            "H1_mc_cal": {
+              "params": {
+                "tau_mc": 0.6,
+                "tau_floor": 0.0
+              },
+              "constraint_status": "coverage_met_recall_relaxed",
+              "val_dev_oof_utility": 0.43772
+            },
+            "H2_deberta_cal_c1": {
+              "params": {
+                "tau_contra": 0.5,
+                "tau_sup": 0.55,
+                "tau_floor": 0.0
+              },
+              "constraint_status": "all_constraints_met",
+              "val_dev_oof_utility": 0.622824
+            },
+            "H2_deberta_cal_c2": {
+              "params": {
+                "tau_contra": 0.35,
+                "tau_sup": 0.7,
+                "tau_floor": 0.0
+              },
+              "constraint_status": "all_constraints_met",
+              "val_dev_oof_utility": 0.633082
+            },
+            "H2b_deberta_cal_plus_nli_rule4": {
+              "params": {
+                "tau_contra": 0.35,
+                "tau_sup": 0.7,
+                "tau_floor": 0.0,
+                "rule4_conflict_enabled": false
+              },
+              "constraint_status": "all_constraints_met",
+              "val_dev_oof_utility": 0.633082
+            },
+            "H4_mc_deberta_cascade": {
+              "params": {
+                "tau_contra": 0.35,
+                "tau_sup": 0.7,
+                "tau_floor": 0.0,
+                "margin_thresh": 0.5,
+                "tau_mc_sup": 0.5,
+                "tau_mc_hall": 0.65
+              },
+              "constraint_status": "all_constraints_met",
+              "val_dev_oof_utility": 0.633082
+            },
+            "H5_meta_calibrated_logreg": {
+              "params": {
+                "C": 5.0,
+                "tau_floor": 0.0
+              },
+              "constraint_status": "all_constraints_met",
+              "val_dev_oof_utility": 0.626521,
+              "model_state": {
+                "scaler_mean": [
+                  -3.8910220033055722,
+                  -0.19078346318569106,
+                  -3.0402358651986217,
+                  2.5635494503441976,
+                  0.09719772986639291,
+                  0.14815606488494668,
+                  0.7546462047781796
+                ],
+                "scaler_scale": [
+                  0.8030725485573013,
+                  0.39984665910891487,
+                  1.0107013803256675,
+                  1.3793717413342228,
+                  0.18004946855438217,
+                  0.28732087091515074,
+                  0.309671736748707
+                ],
+                "classes": [
+                  0,
+                  1,
+                  2
+                ],
+                "coef": [
+                  [
+                    0.4315592783758171,
+                    -0.024433060548562178,
+                    -0.412176572707404,
+                    -0.20618102382161899,
+                    -0.0183796763321906,
+                    0.11446718909141805,
+                    -0.09551919024295978
+                  ],
+                  [
+                    -0.2536956660499208,
+                    0.21790248041962434,
+                    -0.1410350636240375,
+                    0.6104691744982197,
+                    0.04019900324756729,
+                    0.07920838675115557,
+                    -0.09686382042280832
+                  ],
+                  [
+                    -0.17786361232589737,
+                    -0.19346941987106242,
+                    0.5532116363314409,
+                    -0.40428815067660073,
+                    -0.02181932691537694,
+                    -0.19367557584257408,
+                    0.19238301066576788
+                  ]
+                ],
+                "intercept": [
+                  -1.3973111523373312,
+                  2.429981914079889,
+                  -1.0326707617425543
+                ]
+              }
+            },
+            "H6_selective_abstention": {
+              "params": {
+                "tau_contra": 0.35,
+                "tau_sup": 0.7,
+                "tau_floor": 0.0,
+                "tau_abstain": 0.4,
+                "retrieval_sim_gate": 0.35
+              },
+              "constraint_status": "all_constraints_met",
+              "val_dev_oof_utility": 0.633082
+            }
+          }
+        },
+        "OBJ_MACRO_F1_ONLY": {
+          "frozen_winner_strategy": "H5_meta_calibrated_logreg",
+          "strategies": {
+            "H0_baseline": {
+              "params": {},
+              "val_dev_oof_utility": null
+            },
+            "H1_mc_cal": {
+              "params": {
+                "tau_mc": 0.6,
+                "tau_floor": 0.0
+              },
+              "constraint_status": "coverage_met",
+              "val_dev_oof_utility": 0.439918
+            },
+            "H2_deberta_cal_c1": {
+              "params": {
+                "tau_contra": 0.5,
+                "tau_sup": 0.55,
+                "tau_floor": 0.0
+              },
+              "constraint_status": "coverage_met",
+              "val_dev_oof_utility": 0.622824
+            },
+            "H2_deberta_cal_c2": {
+              "params": {
+                "tau_contra": 0.35,
+                "tau_sup": 0.7,
+                "tau_floor": 0.0
+              },
+              "constraint_status": "coverage_met",
+              "val_dev_oof_utility": 0.633082
+            },
+            "H2b_deberta_cal_plus_nli_rule4": {
+              "params": {
+                "tau_contra": 0.35,
+                "tau_sup": 0.7,
+                "tau_floor": 0.0,
+                "rule4_conflict_enabled": false
+              },
+              "constraint_status": "coverage_met",
+              "val_dev_oof_utility": 0.633082
+            },
+            "H4_mc_deberta_cascade": {
+              "params": {
+                "tau_contra": 0.35,
+                "tau_sup": 0.7,
+                "tau_floor": 0.0,
+                "margin_thresh": 0.5,
+                "tau_mc_sup": 0.5,
+                "tau_mc_hall": 0.65
+              },
+              "constraint_status": "coverage_met",
+              "val_dev_oof_utility": 0.633082
+            },
+            "H5_meta_calibrated_logreg": {
+              "params": {
+                "C": 5.0,
+                "tau_floor": 0.0
+              },
+              "constraint_status": "coverage_met",
+              "val_dev_oof_utility": 0.626521,
+              "model_state": {
+                "scaler_mean": [
+                  -3.8910220033055722,
+                  -0.19078346318569106,
+                  -3.0402358651986217,
+                  2.5635494503441976,
+                  0.09719772986639291,
+                  0.14815606488494668,
+                  0.7546462047781796
+                ],
+                "scaler_scale": [
+                  0.8030725485573013,
+                  0.39984665910891487,
+                  1.0107013803256675,
+                  1.3793717413342228,
+                  0.18004946855438217,
+                  0.28732087091515074,
+                  0.309671736748707
+                ],
+                "classes": [
+                  0,
+                  1,
+                  2
+                ],
+                "coef": [
+                  [
+                    0.4315592783758171,
+                    -0.024433060548562178,
+                    -0.412176572707404,
+                    -0.20618102382161899,
+                    -0.0183796763321906,
+                    0.11446718909141805,
+                    -0.09551919024295978
+                  ],
+                  [
+                    -0.2536956660499208,
+                    0.21790248041962434,
+                    -0.1410350636240375,
+                    0.6104691744982197,
+                    0.04019900324756729,
+                    0.07920838675115557,
+                    -0.09686382042280832
+                  ],
+                  [
+                    -0.17786361232589737,
+                    -0.19346941987106242,
+                    0.5532116363314409,
+                    -0.40428815067660073,
+                    -0.02181932691537694,
+                    -0.19367557584257408,
+                    0.19238301066576788
+                  ]
+                ],
+                "intercept": [
+                  -1.3973111523373312,
+                  2.429981914079889,
+                  -1.0326707617425543
+                ]
+              }
+            },
+            "H6_selective_abstention": {
+              "params": {
+                "tau_contra": 0.35,
+                "tau_sup": 0.7,
+                "tau_floor": 0.0,
+                "tau_abstain": 0.4,
+                "retrieval_sim_gate": 0.35
+              },
+              "constraint_status": "coverage_met",
+              "val_dev_oof_utility": 0.633082
+            }
+          }
+        }
+      }
+    },
+    "retrieval": {
+      "val_dev_support": {
+        "fold_name": "retrieval_valdev_full_30_refit",
+        "total_sources": 30,
+        "n_3class_examples": 1250,
+        "counts_by_class": {
+          "CONTRADICTED": 46,
+          "SUPPORTED_PROXY": 1089,
+          "UNSUPPORTED": 115
+        },
+        "sources_by_class": {
+          "CONTRADICTED": 19,
+          "SUPPORTED_PROXY": 30,
+          "UNSUPPORTED": 26
+        }
+      },
+      "selected_c2_lambda": 0.001,
+      "val_dev_oof_c2_lambda_nll": {
+        "0.0": 0.388628,
+        "0.001": 0.388442,
+        "0.01": 0.390176,
+        "0.05": 0.412705,
+        "0.25": 0.483169,
+        "1.0": 0.532598
+      },
+      "calibrators": {
+        "C1_temp_scaling": {
+          "method": "C1_temp_scaling",
+          "temperatures": [
+            1.60314121
+          ],
+          "bias": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "l2_reg": 0.0,
+          "fit_summary": {
+            "fold_name": "retrieval_valdev_full_30_refit",
+            "total_sources": 30,
+            "n_3class_examples": 1250,
+            "counts_by_class": {
+              "CONTRADICTED": 46,
+              "SUPPORTED_PROXY": 1089,
+              "UNSUPPORTED": 115
+            },
+            "sources_by_class": {
+              "CONTRADICTED": 19,
+              "SUPPORTED_PROXY": 30,
+              "UNSUPPORTED": 26
+            },
+            "train_nll": 0.554999,
+            "converged": true
+          }
+        },
+        "C2_prior_bias_temp": {
+          "method": "C2_prior_bias_temp",
+          "temperatures": [
+            2.5041101
+          ],
+          "bias": [
+            -0.72845197,
+            1.22831149,
+            -0.49985952
+          ],
+          "l2_reg": 0.001,
+          "fit_summary": {
+            "fold_name": "retrieval_valdev_full_30_refit",
+            "total_sources": 30,
+            "n_3class_examples": 1250,
+            "counts_by_class": {
+              "CONTRADICTED": 46,
+              "SUPPORTED_PROXY": 1089,
+              "UNSUPPORTED": 115
+            },
+            "sources_by_class": {
+              "CONTRADICTED": 19,
+              "SUPPORTED_PROXY": 30,
+              "UNSUPPORTED": 26
+            },
+            "train_nll": 0.385479,
+            "converged": true
+          }
+        },
+        "Platt_minicheck": {
+          "method": "platt_logit",
+          "scale_a": 0.28147756,
+          "bias_b": 2.37594091,
+          "l2_reg": 0.0001,
+          "fit_summary": {
+            "fold_name": "retrieval_valdev_full_30_refit",
+            "total_sources": 30,
+            "n_3class_examples": 1250,
+            "counts_by_class": {
+              "CONTRADICTED": 46,
+              "SUPPORTED_PROXY": 1089,
+              "UNSUPPORTED": 115
+            },
+            "sources_by_class": {
+              "CONTRADICTED": 19,
+              "SUPPORTED_PROXY": 30,
+              "UNSUPPORTED": 26
+            },
+            "train_bce": 0.351395,
+            "converged": true
+          }
+        }
+      },
+      "objectives": {
+        "OBJ_CONSTRAINED": {
+          "frozen_winner_strategy": "H0_baseline",
+          "strategies": {
+            "H0_baseline": {
+              "params": {},
+              "val_dev_oof_utility": null
+            },
+            "H1_mc_cal": {
+              "params": {
+                "tau_mc": 0.7,
+                "tau_floor": 0.2
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.263837
+            },
+            "H2_deberta_cal_c1": {
+              "params": {
+                "tau_contra": 0.15,
+                "tau_sup": 0.5,
+                "tau_floor": 0.2
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.376622
+            },
+            "H2_deberta_cal_c2": {
+              "params": {
+                "tau_contra": 0.3,
+                "tau_sup": 0.7,
+                "tau_floor": 0.2
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.310536
+            },
+            "H2b_deberta_cal_plus_nli_rule4": {
+              "params": {
+                "tau_contra": 0.3,
+                "tau_sup": 0.7,
+                "tau_floor": 0.2,
+                "rule4_conflict_enabled": true
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.319482
+            },
+            "H4_mc_deberta_cascade": {
+              "params": {
+                "tau_contra": 0.3,
+                "tau_sup": 0.7,
+                "tau_floor": 0.2,
+                "margin_thresh": 0.5,
+                "tau_mc_sup": 0.5,
+                "tau_mc_hall": 0.65
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.310536
+            },
+            "H5_meta_calibrated_logreg": {
+              "params": {
+                "C": 5.0,
+                "tau_floor": 0.2
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.289608,
+              "model_state": {
+                "scaler_mean": [
+                  -3.57110903942331,
+                  -0.1561316233437995,
+                  -2.9228525199597604,
+                  2.151188588222744,
+                  0.07269626151111443,
+                  0.1920681663956144,
+                  0.7352355707552284,
+                  0.5201277599999993,
+                  0.0104,
+                  0.050819397205812855,
+                  0.1518546210288303
+                ],
+                "scaler_scale": [
+                  0.6034604658837799,
+                  0.1851905477983743,
+                  0.9992819478030175,
+                  0.8398397988776095,
+                  0.20395289120473162,
+                  0.32866120296010326,
+                  0.35952720213739714,
+                  0.18097370555244316,
+                  0.10144870625099131,
+                  0.175167297433228,
+                  0.31217904579293365
+                ],
+                "classes": [
+                  0,
+                  1,
+                  2
+                ],
+                "coef": [
+                  [
+                    0.34292198028880433,
+                    -0.1992935197798902,
+                    -0.581957298820749,
+                    -0.04184138927238096,
+                    0.04055024953974598,
+                    -0.10258273173670213,
+                    0.07077217443103803,
+                    -0.2511983766957486,
+                    0.05805987926812635,
+                    0.15643662881411707,
+                    0.6261118193903226
+                  ],
+                  [
+                    -0.1214314194857161,
+                    0.1936889931186345,
+                    -0.08937459228527353,
+                    0.19227213616433086,
+                    -0.08011284731212896,
+                    0.01610696857816872,
+                    0.030723530844611453,
+                    -0.15771974523220086,
+                    0.0613607572314737,
+                    0.07531678714845996,
+                    0.36344611790986114
+                  ],
+                  [
+                    -0.22149056080308854,
+                    0.005604526661256082,
+                    0.6713318911060228,
+                    -0.15043074689195068,
+                    0.039562597772384585,
+                    0.08647576315853298,
+                    -0.10149570527564816,
+                    0.4089181219279505,
+                    -0.11942063649959912,
+                    -0.23175341596257626,
+                    -0.9895579373001834
+                  ]
+                ],
+                "intercept": [
+                  -1.3004312402864415,
+                  2.234460679618326,
+                  -0.9340294393318876
+                ]
+              }
+            },
+            "H6_selective_abstention": {
+              "params": {
+                "tau_contra": 0.3,
+                "tau_sup": 0.7,
+                "tau_floor": 0.2,
+                "tau_abstain": 0.5,
+                "retrieval_sim_gate": 0.35
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.311624
+            }
+          }
+        },
+        "OBJ_MACRO_F1_ONLY": {
+          "frozen_winner_strategy": "H0_baseline",
+          "strategies": {
+            "H0_baseline": {
+              "params": {},
+              "val_dev_oof_utility": null
+            },
+            "H1_mc_cal": {
+              "params": {
+                "tau_mc": 0.7,
+                "tau_floor": 0.2
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.263837
+            },
+            "H2_deberta_cal_c1": {
+              "params": {
+                "tau_contra": 0.15,
+                "tau_sup": 0.5,
+                "tau_floor": 0.2
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.376622
+            },
+            "H2_deberta_cal_c2": {
+              "params": {
+                "tau_contra": 0.3,
+                "tau_sup": 0.7,
+                "tau_floor": 0.2
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.310536
+            },
+            "H2b_deberta_cal_plus_nli_rule4": {
+              "params": {
+                "tau_contra": 0.3,
+                "tau_sup": 0.7,
+                "tau_floor": 0.2,
+                "rule4_conflict_enabled": true
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.319482
+            },
+            "H4_mc_deberta_cascade": {
+              "params": {
+                "tau_contra": 0.3,
+                "tau_sup": 0.7,
+                "tau_floor": 0.2,
+                "margin_thresh": 0.5,
+                "tau_mc_sup": 0.5,
+                "tau_mc_hall": 0.65
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.310536
+            },
+            "H5_meta_calibrated_logreg": {
+              "params": {
+                "C": 5.0,
+                "tau_floor": 0.2
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.289608,
+              "model_state": {
+                "scaler_mean": [
+                  -3.57110903942331,
+                  -0.1561316233437995,
+                  -2.9228525199597604,
+                  2.151188588222744,
+                  0.07269626151111443,
+                  0.1920681663956144,
+                  0.7352355707552284,
+                  0.5201277599999993,
+                  0.0104,
+                  0.050819397205812855,
+                  0.1518546210288303
+                ],
+                "scaler_scale": [
+                  0.6034604658837799,
+                  0.1851905477983743,
+                  0.9992819478030175,
+                  0.8398397988776095,
+                  0.20395289120473162,
+                  0.32866120296010326,
+                  0.35952720213739714,
+                  0.18097370555244316,
+                  0.10144870625099131,
+                  0.175167297433228,
+                  0.31217904579293365
+                ],
+                "classes": [
+                  0,
+                  1,
+                  2
+                ],
+                "coef": [
+                  [
+                    0.34292198028880433,
+                    -0.1992935197798902,
+                    -0.581957298820749,
+                    -0.04184138927238096,
+                    0.04055024953974598,
+                    -0.10258273173670213,
+                    0.07077217443103803,
+                    -0.2511983766957486,
+                    0.05805987926812635,
+                    0.15643662881411707,
+                    0.6261118193903226
+                  ],
+                  [
+                    -0.1214314194857161,
+                    0.1936889931186345,
+                    -0.08937459228527353,
+                    0.19227213616433086,
+                    -0.08011284731212896,
+                    0.01610696857816872,
+                    0.030723530844611453,
+                    -0.15771974523220086,
+                    0.0613607572314737,
+                    0.07531678714845996,
+                    0.36344611790986114
+                  ],
+                  [
+                    -0.22149056080308854,
+                    0.005604526661256082,
+                    0.6713318911060228,
+                    -0.15043074689195068,
+                    0.039562597772384585,
+                    0.08647576315853298,
+                    -0.10149570527564816,
+                    0.4089181219279505,
+                    -0.11942063649959912,
+                    -0.23175341596257626,
+                    -0.9895579373001834
+                  ]
+                ],
+                "intercept": [
+                  -1.3004312402864415,
+                  2.234460679618326,
+                  -0.9340294393318876
+                ]
+              }
+            },
+            "H6_selective_abstention": {
+              "params": {
+                "tau_contra": 0.3,
+                "tau_sup": 0.7,
+                "tau_floor": 0.2,
+                "tau_abstain": 0.5,
+                "retrieval_sim_gate": 0.35
+              },
+              "constraint_status": "unconstrained_fallback",
+              "val_dev_oof_utility": 0.311624
+            }
+          }
+        }
+      }
+    }
+  }
+}

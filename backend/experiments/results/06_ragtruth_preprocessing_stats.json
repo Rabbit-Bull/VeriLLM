@@ -1,0 +1,160 @@
+{
+  "total_raw_responses": 3,
+  "quality_distribution": {
+    "good": 17617,
+    "truncated": 29,
+    "incorrect_refusal": 144
+  },
+  "excluded_responses_count": 173,
+  "total_generated_examples": 123678,
+  "partition_counts": {
+    "train": 89943,
+    "val": 15792,
+    "test": 17943
+  },
+  "source_counts_by_partition": {
+    "train_sources": 2140,
+    "val_sources": 375,
+    "test_sources": 450
+  },
+  "class_distributions": {
+    "train": {
+      "SUPPORTED_PROXY": 79456,
+      "CONTRADICTED": 3392,
+      "UNSUPPORTED": 6646,
+      "MIXED_HALLUCINATION": 449
+    },
+    "val": {
+      "SUPPORTED_PROXY": 13970,
+      "UNSUPPORTED": 1167,
+      "CONTRADICTED": 581,
+      "MIXED_HALLUCINATION": 74
+    },
+    "test": {
+      "SUPPORTED_PROXY": 16388,
+      "CONTRADICTED": 553,
+      "UNSUPPORTED": 965,
+      "MIXED_HALLUCINATION": 37
+    },
+    "total": {
+      "SUPPORTED_PROXY": 109814,
+      "CONTRADICTED": 4526,
+      "UNSUPPORTED": 8778,
+      "MIXED_HALLUCINATION": 560
+    }
+  },
+  "length_statistics": {
+    "context_word_percentiles": {
+      "min": 82,
+      "p50_median": 334,
+      "p90": 719,
+      "p95": 943,
+      "p99": 1422,
+      "max": 1751
+    },
+    "sentence_word_percentiles": {
+      "min": 1,
+      "p50_median": 18,
+      "p90": 29,
+      "p95": 33,
+      "p99": 43,
+      "max": 267
+    },
+    "combined_word_percentiles": {
+      "min": 90,
+      "p50_median": 352,
+      "p90": 740,
+      "p95": 969,
+      "p99": 1446,
+      "max": 1804
+    },
+    "exceeds_512_words_count": 24919,
+    "exceeds_512_words_pct": 20.15
+  },
+  "sample_examples_by_class": {
+    "SUPPORTED_PROXY": {
+      "example_id": "0_s01",
+      "task_type": "Summary",
+      "model": "gpt-4-0613",
+      "label": "SUPPORTED_PROXY",
+      "sentence": "The Anne Frank House has revealed that Anne Frank and her older sister, Margot, likely died at least a month earlier than previously believed.",
+      "context_snippet": "Document Context:\nSeventy years ago, Anne Frank died of typhus in a Nazi concentration camp at the age of 15. Just two weeks after her supposed death on March 31, 1945, the Bergen-Belsen concentration...",
+      "overlapping_spans": []
+    },
+    "CONTRADICTED": {
+      "example_id": "2_s04",
+      "task_type": "Summary",
+      "model": "mistral-7B-instruct",
+      "label": "CONTRADICTED",
+      "sentence": "The sisters contracted typhus, which was rampant in the camp, and are believed to have died before February 7, 2022.",
+      "context_snippet": "Document Context:\nSeventy years ago, Anne Frank died of typhus in a Nazi concentration camp at the age of 15. Just two weeks after her supposed death on March 31, 1945, the Bergen-Belsen concentration...",
+      "overlapping_spans": [
+        {
+          "text": "February 7, 2022.",
+          "label_type": "Evident Conflict",
+          "start": 636,
+          "end": 653,
+          "overlap_ratio": 0.1466,
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "text": "believed to have died before February 7",
+          "label_type": "Evident Conflict",
+          "start": 607,
+          "end": 646,
+          "overlap_ratio": 0.3362,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    "UNSUPPORTED": {
+      "example_id": "2_s06",
+      "task_type": "Summary",
+      "model": "mistral-7B-instruct",
+      "label": "UNSUPPORTED",
+      "sentence": "The discovery has led to a reevaluation of the events surrounding Anne Frank's death and has prompted the Anne Frank House to issue a corrected statement regarding the date of her passing.",
+      "context_snippet": "Document Context:\nSeventy years ago, Anne Frank died of typhus in a Nazi concentration camp at the age of 15. Just two weeks after her supposed death on March 31, 1945, the Bergen-Belsen concentration...",
+      "overlapping_spans": [
+        {
+          "text": "has prompted the Anne Frank House to issue a corrected statement regarding the date of her passing",
+          "label_type": "Evident Baseless Info",
+          "start": 871,
+          "end": 969,
+          "overlap_ratio": 0.5213,
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    "MIXED_HALLUCINATION": {
+      "example_id": "176_s03",
+      "task_type": "Summary",
+      "model": "mistral-7B-instruct",
+      "label": "MIXED_HALLUCINATION",
+      "sentence": "The brutal murder of Farkhunda, a young woman in Afghanistan, in 2015 shocked the world, but her feminist act of carrying her own coffin during her funeral also made international headlines.",
+      "context_snippet": "Document Context:\nAn Amnesty International report is calling for authorities to address the number of attacks on women's rights activists in Afghanistan. The report, entitled \"Their Lives on the Line,...",
+      "overlapping_spans": [
+        {
+          "text": "carrying her own coffin during her funeral",
+          "label_type": "Evident Conflict",
+          "start": 455,
+          "end": 497,
+          "overlap_ratio": 0.2211,
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "text": "also made international headlines.",
+          "label_type": "Subtle Baseless Info",
+          "start": 498,
+          "end": 532,
+          "overlap_ratio": 0.1789,
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ]
+    }
+  }
+}

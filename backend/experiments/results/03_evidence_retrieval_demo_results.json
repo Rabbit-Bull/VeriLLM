@@ -1,0 +1,188 @@
+{
+  "experiment": "03_evidence_retrieval_demo",
+  "document": {
+    "filename": "sample_apollo11_mission.pdf",
+    "page_count": 3,
+    "chunk_count": 5
+  },
+  "candidate_response": "The Apollo 11 mission was launched on a Saturn V rocket from Kennedy Space Center on July 16, 1969. Neil Armstrong and Buzz Aldrin landed the lunar module Eagle on July 20, 1969, and they collected 47.5 pounds of lunar rock. Michael Collins flew the Command Module Columbia alone in lunar orbit. The astronauts safely returned to Earth and splashed down in the Pacific Ocean on July 24, 1969. Did you know the mission was watched by over 650 million television viewers worldwide? Buzz Aldrin also planted an olive branch on Mars.",
+  "retrieval_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "vector_dimension": 384,
+  "results": [
+    {
+      "claim_id": "claim_001",
+      "claim_text": "The Apollo 11 mission was launched on a Saturn V rocket from Kennedy Space Center on July 16, 1969.",
+      "best_similarity_score": 0.7587,
+      "relevance_category": "HIGH_RELEVANCE",
+      "top_page": 1,
+      "top_chunk_id": "sample_apollo11_mission_pdf_p01_c001",
+      "top_chunk_text": ": Launch and Trans-Lunar Flight The Apollo 11 mission was the first spaceflight that landed humans on the Moon. The mission was launched by a Saturn V rocket from Kennedy Space Center on Merritt Island, Florida, on July 16, 1969, at 13:32 UTC. The spacecraft carried Commander Neil Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Buzz Aldrin.",
+      "all_passages": [
+        {
+          "rank": 1,
+          "similarity_score": 0.7587,
+          "chunk_id": "sample_apollo11_mission_pdf_p01_c001",
+          "page_number": 1,
+          "text": ": Launch and Trans-Lunar Flight The Apollo 11 mission was the first spaceflight that landed humans on the Moon. The mission was launched by a Saturn V rocket from Kennedy Space Center on Merritt Island, Florida, on July 16, 1969, at 13:32 UTC. The spacecraft carried Commander Neil Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Buzz Aldrin."
+        },
+        {
+          "rank": 2,
+          "similarity_score": 0.529,
+          "chunk_id": "sample_apollo11_mission_pdf_p03_c002",
+          "page_number": 3,
+          "text": "The astronauts began their journey back to Earth. Apollo 11 safely returned to Earth and splashed down in the Pacific Ocean on July 24, 1969, at 16:50 UTC. The crew and spacecraft were recovered by the aircraft carrier USS Hornet, and the astronauts spent 21 days in quarantine."
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_002",
+      "claim_text": "Neil Armstrong and Buzz Aldrin landed the lunar module Eagle on July 20, 1969, and they collected 47.5 pounds of lunar rock.",
+      "best_similarity_score": 0.7409,
+      "relevance_category": "HIGH_RELEVANCE",
+      "top_page": 2,
+      "top_chunk_id": "sample_apollo11_mission_pdf_p02_c001",
+      "top_chunk_text": ": Lunar Landing and Surface Operations On July 20, 1969, Armstrong and Aldrin entered Eagle and prepared for descent to the lunar surface. Eagle landed in the Sea of Tranquility at 20:17 UTC. Neil Armstrong became the first human to step onto the lunar surface on July 21, 1969, at 02:56 UTC. Buzz Aldrin joined him 19 minutes later.",
+      "all_passages": [
+        {
+          "rank": 1,
+          "similarity_score": 0.7409,
+          "chunk_id": "sample_apollo11_mission_pdf_p02_c001",
+          "page_number": 2,
+          "text": ": Lunar Landing and Surface Operations On July 20, 1969, Armstrong and Aldrin entered Eagle and prepared for descent to the lunar surface. Eagle landed in the Sea of Tranquility at 20:17 UTC. Neil Armstrong became the first human to step onto the lunar surface on July 21, 1969, at 02:56 UTC. Buzz Aldrin joined him 19 minutes later."
+        },
+        {
+          "rank": 2,
+          "similarity_score": 0.6368,
+          "chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+          "page_number": 2,
+          "text": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photographs and collecting 47.5 pounds of lunar rock and soil samples. Meanwhile, Michael Collins flew the Command Module Columbia alone in lunar orbit."
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_003",
+      "claim_text": "Michael Collins flew the Command Module Columbia alone in lunar orbit.",
+      "best_similarity_score": 0.7389,
+      "relevance_category": "HIGH_RELEVANCE",
+      "top_page": 2,
+      "top_chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+      "top_chunk_text": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photographs and collecting 47.5 pounds of lunar rock and soil samples. Meanwhile, Michael Collins flew the Command Module Columbia alone in lunar orbit.",
+      "all_passages": [
+        {
+          "rank": 1,
+          "similarity_score": 0.7389,
+          "chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+          "page_number": 2,
+          "text": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photographs and collecting 47.5 pounds of lunar rock and soil samples. Meanwhile, Michael Collins flew the Command Module Columbia alone in lunar orbit."
+        },
+        {
+          "rank": 2,
+          "similarity_score": 0.4673,
+          "chunk_id": "sample_apollo11_mission_pdf_p01_c001",
+          "page_number": 1,
+          "text": ": Launch and Trans-Lunar Flight The Apollo 11 mission was the first spaceflight that landed humans on the Moon. The mission was launched by a Saturn V rocket from Kennedy Space Center on Merritt Island, Florida, on July 16, 1969, at 13:32 UTC. The spacecraft carried Commander Neil Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Buzz Aldrin."
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_004",
+      "claim_text": "The astronauts safely returned to Earth.",
+      "best_similarity_score": 0.6691,
+      "relevance_category": "HIGH_RELEVANCE",
+      "top_page": 3,
+      "top_chunk_id": "sample_apollo11_mission_pdf_p03_c002",
+      "top_chunk_text": "The astronauts began their journey back to Earth. Apollo 11 safely returned to Earth and splashed down in the Pacific Ocean on July 24, 1969, at 16:50 UTC. The crew and spacecraft were recovered by the aircraft carrier USS Hornet, and the astronauts spent 21 days in quarantine.",
+      "all_passages": [
+        {
+          "rank": 1,
+          "similarity_score": 0.6691,
+          "chunk_id": "sample_apollo11_mission_pdf_p03_c002",
+          "page_number": 3,
+          "text": "The astronauts began their journey back to Earth. Apollo 11 safely returned to Earth and splashed down in the Pacific Ocean on July 24, 1969, at 16:50 UTC. The crew and spacecraft were recovered by the aircraft carrier USS Hornet, and the astronauts spent 21 days in quarantine."
+        },
+        {
+          "rank": 2,
+          "similarity_score": 0.4753,
+          "chunk_id": "sample_apollo11_mission_pdf_p03_c001",
+          "page_number": 3,
+          "text": ": Ascent, Earth Return, and Splashdown After spending 21 hours and 36 minutes on the lunar surface, Eagle lifted off to rejoin Columbia in lunar orbit. After transferring samples and scientific film, Eagle was jettisoned. The astronauts began their journey back to Earth."
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_005",
+      "claim_text": "The astronauts splashed down in the Pacific Ocean on July 24, 1969.",
+      "best_similarity_score": 0.6768,
+      "relevance_category": "HIGH_RELEVANCE",
+      "top_page": 3,
+      "top_chunk_id": "sample_apollo11_mission_pdf_p03_c002",
+      "top_chunk_text": "The astronauts began their journey back to Earth. Apollo 11 safely returned to Earth and splashed down in the Pacific Ocean on July 24, 1969, at 16:50 UTC. The crew and spacecraft were recovered by the aircraft carrier USS Hornet, and the astronauts spent 21 days in quarantine.",
+      "all_passages": [
+        {
+          "rank": 1,
+          "similarity_score": 0.6768,
+          "chunk_id": "sample_apollo11_mission_pdf_p03_c002",
+          "page_number": 3,
+          "text": "The astronauts began their journey back to Earth. Apollo 11 safely returned to Earth and splashed down in the Pacific Ocean on July 24, 1969, at 16:50 UTC. The crew and spacecraft were recovered by the aircraft carrier USS Hornet, and the astronauts spent 21 days in quarantine."
+        },
+        {
+          "rank": 2,
+          "similarity_score": 0.484,
+          "chunk_id": "sample_apollo11_mission_pdf_p02_c001",
+          "page_number": 2,
+          "text": ": Lunar Landing and Surface Operations On July 20, 1969, Armstrong and Aldrin entered Eagle and prepared for descent to the lunar surface. Eagle landed in the Sea of Tranquility at 20:17 UTC. Neil Armstrong became the first human to step onto the lunar surface on July 21, 1969, at 02:56 UTC. Buzz Aldrin joined him 19 minutes later."
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_006",
+      "claim_text": "The mission was watched by over 650 million television viewers worldwide.",
+      "best_similarity_score": 0.3712,
+      "relevance_category": "MODERATE_RELEVANCE",
+      "top_page": 2,
+      "top_chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+      "top_chunk_text": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photographs and collecting 47.5 pounds of lunar rock and soil samples. Meanwhile, Michael Collins flew the Command Module Columbia alone in lunar orbit.",
+      "all_passages": [
+        {
+          "rank": 1,
+          "similarity_score": 0.3712,
+          "chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+          "page_number": 2,
+          "text": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photographs and collecting 47.5 pounds of lunar rock and soil samples. Meanwhile, Michael Collins flew the Command Module Columbia alone in lunar orbit."
+        },
+        {
+          "rank": 2,
+          "similarity_score": 0.2487,
+          "chunk_id": "sample_apollo11_mission_pdf_p01_c001",
+          "page_number": 1,
+          "text": ": Launch and Trans-Lunar Flight The Apollo 11 mission was the first spaceflight that landed humans on the Moon. The mission was launched by a Saturn V rocket from Kennedy Space Center on Merritt Island, Florida, on July 16, 1969, at 13:32 UTC. The spacecraft carried Commander Neil Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Buzz Aldrin."
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_007",
+      "claim_text": "Buzz Aldrin also planted an olive branch on Mars.",
+      "best_similarity_score": 0.5255,
+      "relevance_category": "HIGH_RELEVANCE",
+      "top_page": 2,
+      "top_chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+      "top_chunk_text": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photographs and collecting 47.5 pounds of lunar rock and soil samples. Meanwhile, Michael Collins flew the Command Module Columbia alone in lunar orbit.",
+      "all_passages": [
+        {
+          "rank": 1,
+          "similarity_score": 0.5255,
+          "chunk_id": "sample_apollo11_mission_pdf_p02_c002",
+          "page_number": 2,
+          "text": "Buzz Aldrin joined him 19 minutes later. Together, the astronauts spent over two hours on the surface, taking photographs and collecting 47.5 pounds of lunar rock and soil samples. Meanwhile, Michael Collins flew the Command Module Columbia alone in lunar orbit."
+        },
+        {
+          "rank": 2,
+          "similarity_score": 0.3372,
+          "chunk_id": "sample_apollo11_mission_pdf_p02_c001",
+          "page_number": 2,
+          "text": ": Lunar Landing and Surface Operations On July 20, 1969, Armstrong and Aldrin entered Eagle and prepared for descent to the lunar surface. Eagle landed in the Sea of Tranquility at 20:17 UTC. Neil Armstrong became the first human to step onto the lunar surface on July 21, 1969, at 02:56 UTC. Buzz Aldrin joined him 19 minutes later."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "sentence_tokens": {
+    "min": 2,
+    "p50": 21,
+    "p90": 35,
+    "p95": 40,
+    "p99": 54,
+    "max": 312
+  },
+  "context_tokens": {
+    "min": 132,
+    "p50": 549,
+    "p90": 944,
+    "p95": 1219,
+    "p99": 1996,
+    "max": 2127
+  },
+  "fixed_window_tokens": {
+    "min": 146,
+    "p50": 475,
+    "p90": 691,
+    "p95": 708,
+    "p99": 732,
+    "max": 772
+  },
+  "exceeds_512_count": 6685,
+  "relevance_findings": [
+    {
+      "example_id": "51_s01",
+      "label": "CONTRADICTED",
+      "total_doc_words": 692,
+      "best_chunk_word_pos": 90,
+      "is_best_chunk_in_head_350": true,
+      "best_chunk_similarity": 0.5189,
+      "sentence": "On November 1, 2020, Hong Kong police responded to a call at an upscale apartment in Wan Chai, where..."
+    },
+    {
+      "example_id": "162_s01",
+      "label": "UNSUPPORTED",
+      "total_doc_words": 789,
+      "best_chunk_word_pos": 180,
+      "is_best_chunk_in_head_350": true,
+      "best_chunk_similarity": 0.6081,
+      "sentence": "The framework of a nuclear deal with Iran has been confirmed, however, there are doubts over whether..."
+    },
+    {
+      "example_id": "166_s05",
+      "label": "UNSUPPORTED",
+      "total_doc_words": 789,
+      "best_chunk_word_pos": 720,
+      "is_best_chunk_in_head_350": false,
+      "best_chunk_similarity": 0.3873,
+      "sentence": "The White House has defended the agreement, saying it is a better option than the alternative of mil..."
+    }
+  ]
+}

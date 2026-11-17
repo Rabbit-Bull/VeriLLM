@@ -1,0 +1,40 @@
+# PyTorch (CPU version recommended for systems without dedicated NVIDIA CUDA GPUs)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch>=2.2.0
+
+# Hugging Face & Core ML Libraries
+transformers>=4.40.0
+accelerate>=0.28.0
+datasets>=2.18.0
+sentence-transformers>=2.6.0
+huggingface_hub>=0.23.0
+scikit-learn>=1.4.0
+numpy>=2.0.0
+pandas>=2.2.0
+spacy>=3.7.0
+
+# Document-Grounded Fact-Checking (Research benchmark from UT Austin)
+minicheck @ git+https://github.com/Liyan06/MiniCheck.git@main
+
+# Document Processing
+pypdf>=4.1.0
+
+# Backend Framework & Data Validation
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+python-multipart>=0.0.9
+python-dotenv>=1.0.0
+
+# Database Persistence (Active in Phase 11)
+pymongo>=4.6.0
+
+# User Interface (Phase 10)
+streamlit>=1.40.0
+
+# Live LLM Generation (Phase 11)
+google-genai>=1.0.0
+
+# Testing & Development
+pytest>=8.0.0
+
